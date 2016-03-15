@@ -1,7 +1,7 @@
 <div class="title">
 	<h1>All Contacts</h1>
 </div>
-
+<!--  We want to loop over our array of contacts to display each of them -->
 <% @contacts.each do |contact| %>
 	<div class="contact-card">
 		<div class="row">
@@ -24,4 +24,5 @@
 			</div>
 		</div>
 	</div>
+<!-- We need this end for our loop -->
 <% end %>
