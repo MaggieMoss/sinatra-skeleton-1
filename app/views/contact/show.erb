@@ -1,4 +1,16 @@
-<div>
-	<div class="title"><%= @contact.first_name %> <%= @contact.last_name %></div>
-	<div>Email: <%= @contact.email%></div>
+<div class="contact-card">
+	<div class="row">
+		<div class="three columns">Name: </div>
+		<div class="three columns"><%= @contact.full_name %></div>
+	</div>
+
+	<div class="row">
+		<div class="three columns">Email:</div>
+		<div class="three columns"><%= @contact.email%></div>
+	</div>
+	
+	<div class="row">
+		<div class="three columns">Phone Number:</div>
+		<div class="three columns"><%= @contact.phone_number %></div>
+	</div>
 </div>

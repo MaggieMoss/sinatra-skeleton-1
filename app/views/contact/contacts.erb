@@ -3,18 +3,25 @@
 </div>
 
 <% @contacts.each do |contact| %>
-	<div>
-		<div>First Name:</div>
-		<div><%= contact.first_name %></div>
+	<div class="contact-card">
+		<div class="row">
+			<div class="three columns">Name:</div>
+			<div class="three columns"><%= contact.full_name %></div>
+		</div>
+
+		<div class="row">
+			<div class="three columns">Email:</div>
+			<div class="three columns"><%= contact.email%></div>
+		</div>
+		
+		<div class="row">
+			<div class="three columns">Phone Number:</div>
+			<div class="three columns"><%= contact.phone_number %></div>
+		</div>
+		<div class="row">
+			<div class="three columns">
+				<button><a href="/contacts/<%= contact.id %>">Show</a></button>
+			</div>
+		</div>
 	</div>
-	<div>
-		<div>Last Name:</div>
-		<div><%= contact.last_name %></div>
-	</div>
-	<div>
-		<div>Email:</div>
-		<div><%= contact.email %></div>
-	</div>
-	<button><a href="/contacts/<%= contact.id %>">Show</a></button>
-	<hr>
 <% end %>
