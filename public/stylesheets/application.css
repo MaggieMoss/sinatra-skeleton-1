@@ -1,0 +1,22 @@
+.title {
+	text-align: center;
+}
+
+.buttons {
+	text-align: center;
+}
+
+.buttons a {
+	text-decoration: none;
+	color: black;
+}
+
+.center {
+	text-align: center;
+}
+
+.nav-bar {
+	background: black;
+	color: white;
+	padding: 20px;
+}
