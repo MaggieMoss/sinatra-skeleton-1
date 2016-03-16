@@ -2,5 +2,5 @@
 # all of the active record methods (.find(), .where())
 
 class User < ActiveRecord::Base
-	
+	has_many :contacts
 end
