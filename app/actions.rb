@@ -4,15 +4,10 @@ helpers do
 		User.find_by(id: session[:user_id])
 	end 
 
-	def logged_in 
-		if(session[:user_id])
-			true
-		else 
-			false
-		end 
+	def logged_in? 
+		session[:user_id].present?
 	end
 end
-
 
 # Homepage (Root path)
 get '/' do
@@ -25,6 +20,10 @@ get '/contacts' do
 	# return all of the contacts in the database by calling 'all' method on the Contact Class
 	@contacts = Contact.all
 	erb :'contact/contacts'
+end
+
+before '/contacts/new' do 
+	redirect '/login' unless logged_in?
 end
 
 get '/contacts/new' do 
@@ -85,6 +84,11 @@ post '/contacts/search' do
 	erb :'contact/contacts'
 end
 
+before '/login' do
+	if logged_in?
+		redirect '/contacts'
+	end
+end 
 # ACTIONS/ROUTES FOR USERS 
 get '/login' do 
 	erb :login
@@ -107,7 +111,7 @@ post '/login' do
 	end 
 end 
 
-get '/login' do
+get '/logout' do
 	session[:user_id] = nil
 	"Logged out"
 end
