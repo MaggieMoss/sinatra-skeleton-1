@@ -83,13 +83,6 @@ post '/contacts/search' do
 	# we can reuse this HTML template to loop over our results.
 	erb :'contact/contacts'
 end
-
-before '/login' do
-	if logged_in?
-		redirect '/contacts'
-	end
-end 
-# ACTIONS/ROUTES FOR USERS 
 get '/login' do 
 	erb :login
 end 
